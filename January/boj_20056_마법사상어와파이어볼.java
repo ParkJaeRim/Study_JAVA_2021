@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class boj_파이어볼 {
+public class boj_20056_마법사상어와파이어볼 {
 	static int[] dy = { -1, -1, 0, 1, 1, 1, 0, -1 };
 	static int[] dx = { 0, 1, 1, 1, 0, -1, -1, -1 };
 	static int N, M, K;
