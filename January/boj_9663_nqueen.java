@@ -20,7 +20,7 @@ public class boj_9663_nqueen {
 			map[1] = i;
 			backtracking(1);
 		}
-		System.out.println(cnt);
+		System.out.println(cnt); 
 	}
 
 	public static void backtracking(int row) {
