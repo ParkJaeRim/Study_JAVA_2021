@@ -13,30 +13,29 @@ public class boj_9663_nqueen {
 
 		N = Integer.parseInt(st.nextToken());
 
-		map = new int[N + 1];
 		cnt = 0;
+		map = new int[N + 1];
+
 		for (int i = 1; i <= N; i++) {
 			map[1] = i;
 			backtracking(1);
 		}
-		System.out.println(cnt);
+		System.out.println(cnt); 
 	}
 
-	public static void backtracking(int k) {
-		if (k == N) {
+	public static void backtracking(int row) {
+		if (row == N) {
 			cnt++;
-		} else {
-
-			for (int i = 1; i <= N; i++) {
-				map[k + 1] = i;
-				if (check(k + 1)) {
-					backtracking(k + 1);
-				} else {
-					map[k + 1] = 0;
-				}
+			return;
+		}
+		for (int i = 1; i <= N; i++) {
+			map[row + 1] = i;
+			if (check(row + 1)) {
+				backtracking(row + 1);
+			} else {
+				map[row + 1] = 0;
 			}
 		}
-		map[k] = 0;
 	}
 
 	public static boolean check(int row) {
@@ -46,6 +45,7 @@ public class boj_9663_nqueen {
 			} else if (Math.abs(map[i] - map[row]) == Math.abs(i - row)) {
 				return false;
 			}
+
 		}
 		return true;
 	}
