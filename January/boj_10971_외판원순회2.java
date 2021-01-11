@@ -24,7 +24,7 @@ public class boj_10971_외판원순회2 {
 			}
 		}
 		visited = new boolean[N];
-		answer = Integer.MAX_VALUE;
+		answer = Integer.MAX_VALUE; 
 		
 		for (int i = 0; i < N; i++) {
 			cost = 0;
