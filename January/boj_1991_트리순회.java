@@ -22,7 +22,6 @@ public class boj_1991_트리순회 {
 				int parent = st.nextToken().charAt(0) - 'A';
 				int left = st.nextToken().charAt(0) - 'A';
 				int right = st.nextToken().charAt(0) - 'A';
-//				System.out.println(parent + " " + left + " " + right);
 
 				map[parent] = new Node(map[parent].parent, left, right);
 				if (left != -19) {
