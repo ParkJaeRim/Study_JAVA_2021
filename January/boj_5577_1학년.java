@@ -21,7 +21,7 @@ public class boj_5577_1학년 {
 		for (int i = 0; i < N; i++) {
 			num[i] = Integer.parseInt(st.nextToken());
 		}
-		long[][] cnt = new long[21][N - 1];	
+		long[][] cnt = new long[21][N - 1];
 
 		cnt[num[0]][0] = 1;
 
