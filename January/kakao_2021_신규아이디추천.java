@@ -23,6 +23,7 @@ public class kakao_2021_신규아이디추천 {
 				tmp_id += new_id.charAt(i);
 			}
 		}
+		
 //		3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
 		LinkedList<String> lst = new LinkedList<>();
 		for (int i = 0; i < tmp_id.length(); i++) {
