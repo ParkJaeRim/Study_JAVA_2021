@@ -12,8 +12,10 @@ public class BinaryTree {
 			}
 			add(N);
 		}
-		print(rootNode);
-
+//		preorder(rootNode);
+//		inorder(rootNode);
+//		postorder(rootNode);
+		find(52, 1, rootNode);
 	}
 
 	public static void add(int N) {
@@ -41,13 +43,38 @@ public class BinaryTree {
 		}
 	}
 
-	public static void print(Node start) {
-		System.out.println(start.toString());
-		if (start.leftChild != null) {
-			print(start.leftChild);
+	public static void find(int finding, int cnt, Node now) {
+		if (now.value == finding) {
+			System.out.println(cnt);
+			return;
+		} else if (now.value < finding) {
+			find(finding, cnt + 1, now.rightChild);
+		} else if (now.value > finding) {
+			find(finding, cnt + 1, now.leftChild);
 		}
-		if (start.rightChild != null) {
-			print(start.rightChild);
+	}
+
+	public static void preorder(Node now) {
+		if (now != null) {
+			System.out.println(now.value);
+			preorder(now.leftChild);
+			preorder(now.rightChild);
+		}
+	}
+
+	public static void inorder(Node now) {
+		if (now != null) {
+			inorder(now.leftChild);
+			System.out.println(now.value);
+			inorder(now.rightChild);
+		}
+	}
+
+	public static void postorder(Node now) {
+		if (now != null) {
+			postorder(now.leftChild);
+			postorder(now.rightChild);
+			System.out.println(now.value);
 		}
 	}
 
@@ -62,11 +89,5 @@ public class BinaryTree {
 			this.rightChild = null;
 
 		}
-
-		@Override
-		public String toString() {
-			return "Node [value=" + value + ", leftChild=" + leftChild + ", rightChild=" + rightChild + "]";
-		}
-
 	}
 }
